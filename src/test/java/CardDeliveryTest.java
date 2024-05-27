@@ -21,7 +21,6 @@ public class CardDeliveryTest {
     @Test
     void shouldDeliveryCard(){
 
-
          open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue("Владимир");
         String date = localDateFromCard(3, "dd.MM.yyyy");
@@ -32,9 +31,5 @@ public class CardDeliveryTest {
         $("[data-test-id='agreement']").click();
         $$(".button__content").last().click();
        $("[data-test-id='notification'] ").shouldBe(visible, Duration.ofSeconds(15));
-
-
-
-
     }
 }
